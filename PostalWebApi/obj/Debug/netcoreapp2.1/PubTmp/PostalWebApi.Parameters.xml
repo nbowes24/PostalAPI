@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="PostalWebApi" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Work\\FYP\\PostalWebApi\\PostalWebApi\\obj\\Debug\\netcoreapp2\.1\\PubTmp\\Out\\$" />
-  </parameter>
-  <parameter name="PostalWebApi.Models.StaffContext" description="" value="Data Source=tcp:postalsv.database.windows.net,1433;Initial Catalog=postal;User ID=postaladmin;Password=FYP!dev24" tags="dbfullsql">
-    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^E:\\Work\\FYP\\PostalWebApi\\PostalWebApi\\obj\\Debug\\netcoreapp2\.1\\PubTmp\\EFSQLScripts\\PostalWebApi\.Models\.StaffContext\.sql$" />
-  </parameter>
-</parameters>
