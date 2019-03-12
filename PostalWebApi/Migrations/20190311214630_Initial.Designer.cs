@@ -9,7 +9,7 @@ using PostalWebApi.Models;
 namespace PostalWebApi.Migrations
 {
     [DbContext(typeof(StaffContext))]
-    [Migration("20190301164609_Initial")]
+    [Migration("20190311214630_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace PostalWebApi.Migrations
 
             modelBuilder.Entity("PostalWebApi.Models.Staff", b =>
                 {
-                    b.Property<int>("StaffId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -34,9 +34,24 @@ namespace PostalWebApi.Migrations
 
                     b.Property<int>("Pin");
 
-                    b.HasKey("StaffId");
+                    b.HasKey("Id");
 
                     b.ToTable("Staff");
+                });
+
+            modelBuilder.Entity("PostalWebApi.Models.TableNum", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("StaffId");
+
+                    b.Property<int>("TableNumber");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TableNum");
                 });
 #pragma warning restore 612, 618
         }

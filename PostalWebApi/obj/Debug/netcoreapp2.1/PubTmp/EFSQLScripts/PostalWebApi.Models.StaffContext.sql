@@ -9,24 +9,10 @@ END;
 
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190301164609_Initial')
-BEGIN
-    CREATE TABLE [Staff] (
-        [StaffId] int NOT NULL IDENTITY,
-        [FirstName] nvarchar(max) NULL,
-        [LastName] nvarchar(max) NULL,
-        [Pin] int NOT NULL,
-        [AdminFlag] bit NOT NULL,
-        CONSTRAINT [PK_Staff] PRIMARY KEY ([StaffId])
-    );
-END;
-
-GO
-
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190301164609_Initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20190311214630_Initial')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20190301164609_Initial', N'2.1.8-servicing-32085');
+    VALUES (N'20190311214630_Initial', N'2.1.8-servicing-32085');
 END;
 
 GO

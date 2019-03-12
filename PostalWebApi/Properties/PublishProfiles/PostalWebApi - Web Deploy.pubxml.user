@@ -13,4 +13,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <Value>Data Source=tcp:postalsv.database.windows.net,1433%3bInitial Catalog=postal%3bUser ID=postaladmin%3bPassword=FYP!dev24</Value>
     </DestinationConnectionStrings>
   </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="PostalWebApi.Models.StaffContext">
+      <Value>Data Source=tcp:postalsv.database.windows.net,1433%3bInitial Catalog=postal%3bUser ID=postaladmin%3bPassword=FYP!dev24</Value>
+    </EFMigrations>
+  </ItemGroup>
 </Project>

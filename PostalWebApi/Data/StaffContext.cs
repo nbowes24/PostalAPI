@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using PostalWebApi.Models;
 
 namespace PostalWebApi.Models
 {
@@ -14,5 +15,7 @@ namespace PostalWebApi.Models
         }
 
         public DbSet<PostalWebApi.Models.Staff> Staff { get; set; }
+
+        public DbSet<PostalWebApi.Models.TableNum> TableNum { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace PostalWebApi.Migrations
 
             modelBuilder.Entity("PostalWebApi.Models.Staff", b =>
                 {
-                    b.Property<int>("StaffId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -32,9 +32,24 @@ namespace PostalWebApi.Migrations
 
                     b.Property<int>("Pin");
 
-                    b.HasKey("StaffId");
+                    b.HasKey("Id");
 
                     b.ToTable("Staff");
+                });
+
+            modelBuilder.Entity("PostalWebApi.Models.TableNum", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("StaffId");
+
+                    b.Property<int>("TableNumber");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Table");
                 });
 #pragma warning restore 612, 618
         }
