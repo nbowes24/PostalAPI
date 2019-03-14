@@ -11,56 +11,56 @@ namespace PostalWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TableNumsController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
         private readonly PostalWebApiContext _context;
 
-        public TableNumsController(PostalWebApiContext context)
+        public CategoriesController(PostalWebApiContext context)
         {
             _context = context;
         }
 
-        // GET: api/TableNums
+        // GET: api/Categories
         [HttpGet]
-        public IEnumerable<TableNum> GetTableNum()
+        public IEnumerable<Category> GetCategory()
         {
-            return _context.TableNum;
+            return _context.Category;
         }
 
-        // GET: api/TableNums/5
+        // GET: api/Categories/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetTableNum([FromRoute] int id)
+        public async Task<IActionResult> GetCategory([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var tableNum = await _context.TableNum.FindAsync(id);
+            var category = await _context.Category.FindAsync(id);
 
-            if (tableNum == null)
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return Ok(tableNum);
+            return Ok(category);
         }
 
-        // PUT: api/TableNums/5
+        // PUT: api/Categories/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTableNum([FromRoute] int id, [FromBody] TableNum tableNum)
+        public async Task<IActionResult> PutCategory([FromRoute] int id, [FromBody] Category category)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != tableNum.Id)
+            if (id != category.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(tableNum).State = EntityState.Modified;
+            _context.Entry(category).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace PostalWebApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TableNumExists(id))
+                if (!CategoryExists(id))
                 {
                     return NotFound();
                 }
@@ -81,45 +81,45 @@ namespace PostalWebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/TableNums
+        // POST: api/Categories
         [HttpPost]
-        public async Task<IActionResult> PostTableNum([FromBody] TableNum tableNum)
+        public async Task<IActionResult> PostCategory([FromBody] Category category)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.TableNum.Add(tableNum);
+            _context.Category.Add(category);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTableNum", new { id = tableNum.Id }, tableNum);
+            return CreatedAtAction("GetCategory", new { id = category.Id }, category);
         }
 
-        // DELETE: api/TableNums/5
+        // DELETE: api/Categories/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTableNum([FromRoute] int id)
+        public async Task<IActionResult> DeleteCategory([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var tableNum = await _context.TableNum.FindAsync(id);
-            if (tableNum == null)
+            var category = await _context.Category.FindAsync(id);
+            if (category == null)
             {
                 return NotFound();
             }
 
-            _context.TableNum.Remove(tableNum);
+            _context.Category.Remove(category);
             await _context.SaveChangesAsync();
 
-            return Ok(tableNum);
+            return Ok(category);
         }
 
-        private bool TableNumExists(int id)
+        private bool CategoryExists(int id)
         {
-            return _context.TableNum.Any(e => e.Id == id);
+            return _context.Category.Any(e => e.Id == id);
         }
     }
 }

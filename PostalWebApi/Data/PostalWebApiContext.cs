@@ -7,9 +7,9 @@ using PostalWebApi.Models;
 
 namespace PostalWebApi.Models
 {
-    public class StaffContext : DbContext
+    public class PostalWebApiContext : DbContext
     {
-        public StaffContext (DbContextOptions<StaffContext> options)
+        public PostalWebApiContext (DbContextOptions<PostalWebApiContext> options)
             : base(options)
         {
         }
@@ -17,5 +17,9 @@ namespace PostalWebApi.Models
         public DbSet<PostalWebApi.Models.Staff> Staff { get; set; }
 
         public DbSet<PostalWebApi.Models.TableNum> TableNum { get; set; }
+
+        public DbSet<PostalWebApi.Models.Menu> Menu { get; set; }
+
+        public DbSet<PostalWebApi.Models.Category> Category { get; set; }
     }
 }

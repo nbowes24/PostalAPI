@@ -13,9 +13,9 @@ namespace PostalWebApi.Controllers
     [ApiController]
     public class StaffsController : ControllerBase
     {
-        private readonly StaffContext _context;
+        private readonly PostalWebApiContext _context;
 
-        public StaffsController(StaffContext context)
+        public StaffsController(PostalWebApiContext context)
         {
             _context = context;
         }

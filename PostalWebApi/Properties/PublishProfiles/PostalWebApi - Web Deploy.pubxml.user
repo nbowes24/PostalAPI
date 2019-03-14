@@ -9,12 +9,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIGrTuisrP02SqDMIAjJxWgAAAAACAAAAAAAQZgAAAAEAACAAAAAFA4QmXJzgKw9lG9i5k7JmmoNJ+k8zM0JyRYPUt3+wlQAAAAAOgAAAAAIAACAAAAAUNhhep9DuZaWPjmp42AKNsdWRXdeYv47KZ/N+nGAA9YAAAAAnGfuindcYS/yfwoV8o9FunYFA0eQfajU4xXmaaOiSnDGZyi5oaIeWKVaZxTTEwf91BfAjVo8Sp/JpUVsgBUdLN6VD82TxDmoJ/2mo3QTIwXirtzaW+KrsPu/eukL87BuXwKCFFYssfWbpRjZPXR/epKtIHZpoqh5c4qYmMYoAj0AAAABUpxVfvReVsIFH+mtkd5CYjKk16+gkAfMxFfxHIfpVpZyGDIsHWgUT3WtVoytnHdbif3gBUlYHZ5jFQkklvWd/</EncryptedPassword>
   </PropertyGroup>
   <ItemGroup>
-    <DestinationConnectionStrings Include="StaffContext">
-      <Value>Data Source=tcp:postalsv.database.windows.net,1433%3bInitial Catalog=postal%3bUser ID=postaladmin%3bPassword=FYP!dev24</Value>
-    </DestinationConnectionStrings>
-  </ItemGroup>
-  <ItemGroup>
-    <EFMigrations Include="PostalWebApi.Models.StaffContext">
+    <EFMigrations Include="PostalWebApi.Models.PostalWebApiContext">
       <Value>Data Source=tcp:postalsv.database.windows.net,1433%3bInitial Catalog=postal%3bUser ID=postaladmin%3bPassword=FYP!dev24</Value>
     </EFMigrations>
   </ItemGroup>

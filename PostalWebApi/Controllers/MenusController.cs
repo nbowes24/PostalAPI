@@ -11,56 +11,56 @@ namespace PostalWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TableNumsController : ControllerBase
+    public class MenusController : ControllerBase
     {
         private readonly PostalWebApiContext _context;
 
-        public TableNumsController(PostalWebApiContext context)
+        public MenusController(PostalWebApiContext context)
         {
             _context = context;
         }
 
-        // GET: api/TableNums
+        // GET: api/Menus
         [HttpGet]
-        public IEnumerable<TableNum> GetTableNum()
+        public IEnumerable<Menu> GetMenu()
         {
-            return _context.TableNum;
+            return _context.Menu;
         }
 
-        // GET: api/TableNums/5
+        // GET: api/Menus/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetTableNum([FromRoute] int id)
+        public async Task<IActionResult> GetMenu([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var tableNum = await _context.TableNum.FindAsync(id);
+            var menu = await _context.Menu.FindAsync(id);
 
-            if (tableNum == null)
+            if (menu == null)
             {
                 return NotFound();
             }
 
-            return Ok(tableNum);
+            return Ok(menu);
         }
 
-        // PUT: api/TableNums/5
+        // PUT: api/Menus/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTableNum([FromRoute] int id, [FromBody] TableNum tableNum)
+        public async Task<IActionResult> PutMenu([FromRoute] int id, [FromBody] Menu menu)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != tableNum.Id)
+            if (id != menu.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(tableNum).State = EntityState.Modified;
+            _context.Entry(menu).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace PostalWebApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TableNumExists(id))
+                if (!MenuExists(id))
                 {
                     return NotFound();
                 }
@@ -81,45 +81,45 @@ namespace PostalWebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/TableNums
+        // POST: api/Menus
         [HttpPost]
-        public async Task<IActionResult> PostTableNum([FromBody] TableNum tableNum)
+        public async Task<IActionResult> PostMenu([FromBody] Menu menu)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.TableNum.Add(tableNum);
+            _context.Menu.Add(menu);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetTableNum", new { id = tableNum.Id }, tableNum);
+            return CreatedAtAction("GetMenu", new { id = menu.Id }, menu);
         }
 
-        // DELETE: api/TableNums/5
+        // DELETE: api/Menus/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTableNum([FromRoute] int id)
+        public async Task<IActionResult> DeleteMenu([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var tableNum = await _context.TableNum.FindAsync(id);
-            if (tableNum == null)
+            var menu = await _context.Menu.FindAsync(id);
+            if (menu == null)
             {
                 return NotFound();
             }
 
-            _context.TableNum.Remove(tableNum);
+            _context.Menu.Remove(menu);
             await _context.SaveChangesAsync();
 
-            return Ok(tableNum);
+            return Ok(menu);
         }
 
-        private bool TableNumExists(int id)
+        private bool MenuExists(int id)
         {
-            return _context.TableNum.Any(e => e.Id == id);
+            return _context.Menu.Any(e => e.Id == id);
         }
     }
 }

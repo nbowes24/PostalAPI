@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIGrTuisrP02SqDMIAjJxWgAAAAACAAAAAAAQZgAAAAEAACAAAAC4JR6R6855qWuUBxh+K3zwI+NDahPJczYoF3lIW6D6VwAAAAAOgAAAAAIAACAAAAC7BffNIYpFo/PsI9XJDHMtLlMm1Pzmsx1L/CCq5fvDaoAAAABE0qf8DVyPss76NYlHbun6w+isP6AIy3mOdTO8dbi5p9/W2DLDyebL7FIos2J2YCdcjF0G3GRFPrKU+ZLNuRKPbpxLq7aNk+JDmg/qCVvZ5BFpvFyn0L1mhCOw9MWJA6EiOj8xGAfrECb8LeNBWKiF13f5u+UMe22NqhqH8xXVQUAAAADdnQyWxC/Bn2Vi0hvKDExRH/MORybhR8BEr5+Fk1g1tdKz9YuADO8Ndql/cFZD0lIhj+UBsrZkODG7Tr/eVU47</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="PostalWebApiContext">
+      <Value>Data Source=tcp:postalsv.database.windows.net,1433%3bInitial Catalog=postal%3bUser ID=postaladmin%3bPassword=FYP!dev24</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="PostalWebApi.Models.PostalWebApiContext">
+      <Value>Data Source=tcp:postalsv.database.windows.net,1433%3bInitial Catalog=postal%3bUser ID=postaladmin%3bPassword=FYP!dev24</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

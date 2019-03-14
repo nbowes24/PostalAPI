@@ -28,9 +28,9 @@ namespace PostalWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            services.AddDbContext<StaffContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("StaffContext")));
+            
+            services.AddDbContext<PostalWebApiContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("PostalWebApiContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
