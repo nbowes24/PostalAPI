@@ -21,5 +21,9 @@ namespace PostalWebApi.Models
         public DbSet<PostalWebApi.Models.Menu> Menu { get; set; }
 
         public DbSet<PostalWebApi.Models.Category> Category { get; set; }
+
+        public DbSet<PostalWebApi.Models.TableOrder> TableOrder { get; set; }
+
+        public DbSet<PostalWebApi.Models.OrderItem> OrderItem { get; set; }
     }
 }

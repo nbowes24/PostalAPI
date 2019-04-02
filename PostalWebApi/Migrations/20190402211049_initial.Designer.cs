@@ -10,8 +10,8 @@ using PostalWebApi.Models;
 namespace PostalWebApi.Migrations
 {
     [DbContext(typeof(PostalWebApiContext))]
-    [Migration("20190314011511_Intitial")]
-    partial class Intitial
+    [Migration("20190402211049_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,6 +55,21 @@ namespace PostalWebApi.Migrations
                     b.ToTable("Menu");
                 });
 
+            modelBuilder.Entity("PostalWebApi.Models.OrderItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("MenuId");
+
+                    b.Property<int>("TableOrderId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderItem");
+                });
+
             modelBuilder.Entity("PostalWebApi.Models.Staff", b =>
                 {
                     b.Property<int>("Id")
@@ -87,6 +102,25 @@ namespace PostalWebApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TableNum");
+                });
+
+            modelBuilder.Entity("PostalWebApi.Models.TableOrder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Complete");
+
+                    b.Property<DateTime>("OrderTime");
+
+                    b.Property<int>("StaffId");
+
+                    b.Property<int>("TableNumId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TableOrder");
                 });
 #pragma warning restore 612, 618
         }
