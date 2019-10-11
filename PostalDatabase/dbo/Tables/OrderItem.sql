@@ -1,0 +1,5 @@
+﻿CREATE TABLE OrderItem (
+	Id int IDENTITY(1,1) PRIMARY KEY,
+	MenuId int FOREIGN KEY REFERENCES Menu(Id),
+	TableOrderId int FOREIGN KEY REFERENCES TableOrder(Id)
+);

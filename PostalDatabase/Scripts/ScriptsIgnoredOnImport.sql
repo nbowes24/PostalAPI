@@ -1,0 +1,18 @@
+﻿
+DROP TABLE Menu
+GO
+
+DROP TABLE TableOrder
+GO
+
+DROP TABLE OrderItem
+GO
+
+DROP TABLE Staff
+GO
+
+DROP TABLE Categories
+GO
+
+DROP TABLE TableNum
+GO
