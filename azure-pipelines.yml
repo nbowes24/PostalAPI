@@ -11,6 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  solution: '**/*.sln'
 
 stages:
 - stage: Build
@@ -21,7 +22,7 @@ stages:
       inputs:
         command: build
         arguments: '--configuration $(BuildConfiguration)'
-        projects: '**/*.csproj'
+        solution: '$(solution)'
       
     - task: DotNetCoreCLI@2
       inputs:
