@@ -24,5 +24,11 @@ steps:
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
 
+- task: CopyFiles@2
+      inputs:
+        Conents: azuredeploy.json
+        OverWrite: true
+        TargetFolder: '$(build.artifactstagingdirectory)'
+
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
