@@ -18,7 +18,7 @@ stages:
   jobs:
   - job: Build
     steps:
-    - task: DotNetCoreCLI@2
+    - task: MSBuild@1
       inputs:
         command: build
         arguments: '--configuration $(BuildConfiguration)'
