@@ -22,7 +22,6 @@ stages:
       inputs:
         solution: '**/*.sqlproj'
         configuration: '$(BuildConfiguration)'
-        msBuildArgs: '/property:DSP="Microsoft.Data.Tools.Schema.Sql.SqlAzureV12SchemaProvider"'
 
     - task: DotNetCoreCLI@2
       inputs:
