@@ -18,6 +18,11 @@ stages:
   jobs:
   - job: Build
     steps:
+    - task: NuGetCommand@2
+      inputs:
+        command: 'restore'
+        restoreSolution: '**/*.sln'
+
     - task: MSBuild@1
       inputs:
         command: build
