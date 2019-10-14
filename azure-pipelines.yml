@@ -18,16 +18,22 @@ stages:
   jobs:
   - job: Build
     steps:
+
     - task: NuGetCommand@2
       inputs:
         command: 'restore'
         restoreSolution: '**/*.sln'
 
-    - task: MSBuild@1
+    - task: VSBuild@1
+      inputs:
+        msbuildArgs: '**/*.sqlproj'
+        configuration: '$(BuildConfiguration)'
+
+    - task: DotNetCoreCLI@2
       inputs:
         command: build
         arguments: '--configuration $(BuildConfiguration)'
-        solution: '$(solution)'
+        projects: '**/*.csproj'
       
     - task: DotNetCoreCLI@2
       inputs:
