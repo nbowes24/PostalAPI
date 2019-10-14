@@ -86,7 +86,6 @@
             "properties": {
               "edition": "Free",
               "collation": "SQL_Latin1_General_CP1_CI_AS",
-              "maxSizeBytes": "32000000",
               "requestedServiceObjectiveName": "Free"
             }
           },
