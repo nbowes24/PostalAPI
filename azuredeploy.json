@@ -49,13 +49,20 @@
         "metadata": {
           "description": "Location for all resources."
         }
-      }
+      },
+      "appName": {
+        "type": "string",
+        "defaultValue": "Postal",
+        "metadata": {
+          "description": "The name of the application"
+        }
+      },
     },
     "variables": {
-      "hostingPlanName": "[concat('hostingplan', uniqueString(resourceGroup().id))]",
-      "webSiteName": "[concat('webSite', uniqueString(resourceGroup().id))]",
-      "sqlserverName": "[concat('sqlserver', uniqueString(resourceGroup().id))]",
-      "databaseName": "sampledb"
+      "hostingPlanName": "[concat(parameters('appName'), '-HostingPlan')]",
+      "webSiteName": "[concat(parameters('appName'), '-AppService')]",
+      "sqlserverName": "[concat(parameters('appName'), '-SqlServer')]",
+      "databaseName": "[concat(parameters('appName'), '-Database')]"
     },
     "resources": [
       {
