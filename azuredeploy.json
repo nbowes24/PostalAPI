@@ -59,10 +59,10 @@
       }
     },
     "variables": {
-      "hostingPlanName": "[concat(parameters('appName'), '-HostingPlan')]",
-      "webSiteName": "[concat(parameters('appName'), '-AppService')]",
-      "sqlserverName": "[concat(parameters('appName'), '-SqlServer')]",
-      "databaseName": "[concat(parameters('appName'), '-Database')]"
+      "hostingPlanName": "[concat(parameters('appName'), '-hostingplan')]",
+      "webSiteName": "[concat(parameters('appName'), '-appservice')]",
+      "sqlserverName": "[concat(parameters('appName'), '-sqlserver')]",
+      "databaseName": "[concat(parameters('appName'), '-database')]"
     },
     "resources": [
       {
