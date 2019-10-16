@@ -61,7 +61,7 @@
     "variables": {
       "hostingPlanName": "[concat(parameters('appName'), '-hostingplan')]",
       "webSiteName": "[concat(parameters('appName'), '-appservice')]",
-      "sqlserverName": "[concat(parameters('appName'), '-sqlserver')]",
+      "sqlserverName": "[concat(toLower(parameters('appName')), '-sqlserver')]",
       "databaseName": "[concat(parameters('appName'), '-database')]"
     },
     "resources": [
