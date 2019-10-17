@@ -98,7 +98,7 @@
           "displayName": "HostingPlan"
         },
         "sku": {
-          "name": "[parameters('skuName')]"
+          "name": "[parameters('sku')]"
         },
         "properties": {
           "name": "[variables('hostingPlanName')]"
